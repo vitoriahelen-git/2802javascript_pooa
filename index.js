@@ -1,34 +1,85 @@
 
-let UmaFuncao = function (){
-    console.log ("Fui armazenada em uma variavel")
-}
-UmaFuncao()
-
-function f(funcao){
-    funcao(f)
-}
-
-function g(){
-    function outraFuncao(){
-        console,log("Fui definida por g")
+function eAgora(){
+    let cont = 1
+    function f1(){
+        console.log(cont)
+        cont++
     }
-    return outraFuncao
-}
-
-function f(funcao){
-    return funcao() //g
-}
-
-function g(){
-    function outraFuncao(){
-        console.log ("Fui definida g")
-        return () => {2} 
+    cont++
+    function f2(){
+        console.log(cont)
     }
-    return outraFuncao()
+    return {f1, f2}
 }
+
+let eAgoraResult = eAgora()
+eAgoraResult.f1()
+eAgoraResult.f2()
+eAgoraResult.f1()
+
+
+// function saudacoes(saudacoes, nome){
+//     return function(){
+//         console.log(`${saudacoes}, ${nome}`)
+//     }
+// }
+
+// let olaJoao = saudacoesFactory('Ola', 'Joao')
+// let tchauJoao = saudacoesFactory('Tchau', 'Joao')
+// olaJoao()
+// tchauJoao()
+
+
+// function ola(){
+//     let nome = 'Joao'
+//     return function(){
+//         console.log(`Olá, ${nome}`)
+//     }
+// }
+
+// let olaResult = ola()
+// olaResult()
+
+
+// function f(){
+//     let nome = 'Joao'
+//     function g(){
+//         console.log(nome) 
+//     }
+//     g()
+// }
+// f()
+
+// let UmaFuncao = function (){
+//     console.log ("Fui armazenada em uma variavel")
+// }
+// UmaFuncao()
+
+// function f(funcao){
+//     funcao(f)
+// }
+
+// function g(){
+//     function outraFuncao(){
+//         console,log("Fui definida por g")
+//     }
+//     return outraFuncao
+// }
+
+// function f(funcao){
+//     return funcao() //g
+// }
+
+// function g(){
+//     function outraFuncao(){
+//         console.log ("Fui definida g")
+//         return () => {2} 
+//     }
+//     return outraFuncao()
+// }
 
 //f(g())
-console.log(f(g)()) + (f(g)())
+//console.log(f(g)()) + (f(g)())
 
 // f(function(){
 //     console.log("Estoy sendo passada para f...")
