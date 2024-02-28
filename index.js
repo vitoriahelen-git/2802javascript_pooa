@@ -1,21 +1,38 @@
 
-function eAgora(){
-    let cont = 1
-    function f1(){
-        console.log(cont)
-        cont++
-    }
-    cont++
-    function f2(){
-        console.log(cont)
-    }
-    return {f1, f2}
+const app = express()
+
+app.get('/livors', () => {
+
+})
+
+function f(){}  
+
+() => {}
+
+a => {return a * 2}
+a => a * 2 
+
+function f (a){
+    return a * 2
 }
 
-let eAgoraResult = eAgora()
-eAgoraResult.f1()
-eAgoraResult.f2()
-eAgoraResult.f1()
+// function eAgora(){
+//     let cont = 1
+//     function f1(){
+//         console.log(cont)
+//         cont++
+//     }
+//     cont++
+//     function f2(){
+//         console.log(cont)
+//     }
+//     return {f1, f2}
+// }
+
+// let eAgoraResult = eAgora()
+// eAgoraResult.f1()
+// eAgoraResult.f2()
+// eAgoraResult.f1()
 
 
 // function saudacoes(saudacoes, nome){
