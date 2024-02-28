@@ -1,17 +1,62 @@
 //comentario 
 
+
+//funções 
+function f3(){
+
+}
+console.log(f3())
+
+const hello = () => console.log("Hello")
+hello()
+const dobro = (valor) => valor * 2
+
+let triplo = (valor) => {
+    return valor * 3
+}
+
+const ehPar = n=> {n%2 === 0}
+console.log(ehPar(10))
+
+const ehPar2 = n=> n%2 === 0
+console.log(ehPar(10))
+
+// const f = () => {}
+// const umArgumento = n => {
+//     console.log(n)
+// }
+
+// const soUmaLinha = () => console.log("Oi")
+
+// const teste1 = (a, b) => {
+//     return a + b; 
+// }
+
+//const teste2 = (a, b) => a + b
+// const dobro = function(n){
+//     return 2 * n
+// }
+
+// const result =  dobro(6)
+// console.log(result)
+
+// const triplo = function(n=5){
+//     return 3 * n
+// }
+
+// console.log(triplo())
+// console.log(triplo(10))
+
 //funcao 
-function hello(){
-    console.log('oi')
-}
-hello('oi')
-function hello(nome){
-    console.log('oi, ' + nome)
-}
-hello('Rodrigo')
+// function hello(){
+//     console.log('oi')
+// }
+// hello('oi')
+// function hello(nome){
+//     console.log('oi, ' + nome)
+// }
+// hello('Rodrigo')
     
-
-
 
 // v1 = []
 // v1[0] = 3.4
