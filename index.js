@@ -1,38 +1,99 @@
-//CALCULADORA QUE FAZ SOMA E SUB CADA OPERACAO ENVOLVE DOIS OPERANDOS
-let calculadora = {
-    soma: (a, b) => a+b, //arrowfuncion
-    subtacao: function(a,b){ //funcicion
-        return(a-b)
+const fs = require('fs')
+const abrirArquivo = (nomeArquivo) => {
+    const exibirConteudo = (erro, conteudo) =>{
+        if(erro){
+            console.log(`Erro: ${erro}`)
+        }
+        else{
+            console.log(conteudo.toString())
+            const resultado = conteudo.toString() * 10
+            const finalizar = (erro) => {
+                if(!erro){
+                    console.log('Conteudo escrito com sucesso')
+                }
+                else{
+                    console.log('Escrita falhou')
+                }
+            }
+            fs.writeFile('resultado.txt', resultado.toString(), finalizar)
+        }
     }
+    fs.readFile(nomeArquivo, exibirConteudo)
 }
+abrirArquivo('arquivo.txt')
+
+
+// function demorada(){
+//     //pegar o horario atual do sistema , e decolar ele de 2 segundos no futuro
+//     const atualMais2Segundos = new Date().getTime() + 2000
+//     while(new Date().getTime() <= atualMais2Segundos); 
+//     const d = 8 + 4
+//     return d 
+// } 
+
+// const a = 2  + 5
+// const b = 5 + 9
+// setTimeout(function(){
+//     const d = demorada()
+//     console.log(d)
+// }, 500)
+
+// const e = 2 + a + b
+// console.log('e: ' + e)  
+
+
+// function demorada(){
+//     //pegar o horario atual do sistema , e decolar ele de 2 segundos no futuro
+//     const atualMais2Segundos = new Date().getTime() + 2000
+//     while(new Date().getTime() <= atualMais2Segundos); 
+//     const d = 8 + 4
+//     return d 
+// }
+// const a = 2 + 7
+// const b = 5
+// console.log(a+ b)
+
+
+// console.log('Eu primeiro')
+// console.log('Agora eu')
+// console.log('Sempre vou ser a ultima...:(')
+
+
+//CALCULADORA QUE FAZ SOMA E SUB CADA OPERACAO ENVOLVE DOIS OPERANDOS
+// let calculadora = {
+//     soma: (a, b) => a+b, //arrowfuncion
+//     subtacao: function(a,b){ //funcicion
+//         return(a-b)
+//     }
+// }
 
 
 
-let concessionaria = {
-    CNPJ: '123456789101',
-    endereco: {
-        logradouro: 'Rua J', 
-        numero: '22',
-    }, 
-    carros: [
-        {
-            marca: 'Ford',
-            modelo: 'Fiesta',
-            ano: '2015'
-        }, 
-        {
-            marca: 'VW',
-            modelo: 'Fusca',
-            ano: '1975'
-        }, 
-    ]   
-}
+// let concessionaria = {
+//     CNPJ: '123456789101',
+//     endereco: {
+//         logradouro: 'Rua J', 
+//         numero: '22',
+//     }, 
+//     carros: [
+//         {
+//             marca: 'Ford',
+//             modelo: 'Fiesta',
+//             ano: '2015'
+//         }, 
+//         {
+//             marca: 'VW',
+//             modelo: 'Fusca',
+//             ano: '1975'
+//         }, 
+//     ]   
+// }
 
-console.log(concessionaria.carros[1].marca)
+// console.log(concessionaria.carros[1].marca)
 
-for(let carro of concessionaria.carros){
-    console.log(`Marca: ${carro.marca}. Modelo:${carro.modelo}`)
-}
+// for(let carro of concessionaria.carros){
+//     console.log(`Marca: ${carro.marca}. Modelo:${carro.modelo}`)
+// }
 
 // let pessoa = {
 //     nome: 'Maria', 
