@@ -1,26 +1,66 @@
-const fs = require('fs')
-const abrirArquivo = (nomeArquivo) => {
-    const exibirConteudo = (erro, conteudo) =>{
-        if(erro){
-            console.log(`Erro: ${erro}`)
-        }
-        else{
-            console.log(conteudo.toString())
-            const resultado = conteudo.toString() * 10
-            const finalizar = (erro) => {
-                if(!erro){
-                    console.log('Conteudo escrito com sucesso')
-                }
-                else{
-                    console.log('Escrita falhou')
-                }
-            }
-            fs.writeFile('resultado.txt', resultado.toString(), finalizar)
-        }
-    }
-    fs.readFile(nomeArquivo, exibirConteudo)
+//1 + 2 + 3 + ....... + n - 2 + n - 1 + n
+const soma = (a,b) => {
+    let p = new Promise((resolve, reject) => {
+        //se a e b forem positivos
+        //chamar resolve passando a + b como parametro 
+        //caso contario chamar reject passando texto "nao use negativos" como parametros
+        if(a > 0 && b > 0)
+            resolve(a + b)
+        else
+            reject('Nao use negativo')
+    })
+    return p
 }
-abrirArquivo('arquivo.txt')
+
+
+soma(2,7).then(res => {
+    console.log(`Resultado: ${res}`)
+})
+.catch(erro => console.log(`Erro: ${erro}`))
+
+soma(-2,7)
+.then(res => console.log(`Resultado: ${res}`))
+.catch(erro => console.log(`Erro: ${erro}`))
+
+// const calculoDemorado = (n) => {
+//     let p = new Promise((resolve, reject) => {
+//         let res = 0
+//         for(let i = 1; i <= n; i++)
+//             res += i
+//         resolve(res)
+//     })
+//     return p 
+// }
+
+// const aux = calculoDemorado(3)
+// aux.then((resultado) => {
+//     console.log(resultado)
+// })
+
+
+// const fs = require('fs')
+// const abrirArquivo = (nomeArquivo) => {
+//     const exibirConteudo = (erro, conteudo) =>{
+//         if(erro){
+//             console.log(`Erro: ${erro}`)
+//         }
+//         else{
+//             console.log(conteudo.toString())
+//             const resultado = conteudo.toString() * 10
+//             const finalizar = (erro) => {
+//                 if(!erro){
+//                     console.log('Conteudo escrito com sucesso')
+//                 }
+//                 else{
+//                     console.log('Escrita falhou')
+//                 }
+//             }
+//             fs.writeFile('resultado.txt', resultado.toString(), finalizar)
+//         }
+//     }
+//     fs.readFile(nomeArquivo, exibirConteudo)
+// }
+// abrirArquivo('arquivo.txt')
 
 
 // function demorada(){
