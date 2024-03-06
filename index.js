@@ -1,20 +1,76 @@
-
-const app = express()
-
-app.get('/livors', () => {
-
-})
-
-function f(){}  
-
-() => {}
-
-a => {return a * 2}
-a => a * 2 
-
-function f (a){
-    return a * 2
+//CALCULADORA QUE FAZ SOMA E SUB CADA OPERACAO ENVOLVE DOIS OPERANDOS
+let calculadora = {
+    soma: (a, b) => a+b, //arrowfuncion
+    subtacao: function(a,b){ //funcicion
+        return(a-b)
+    }
 }
+
+
+
+let concessionaria = {
+    CNPJ: '123456789101',
+    endereco: {
+        logradouro: 'Rua J', 
+        numero: '22',
+    }, 
+    carros: [
+        {
+            marca: 'Ford',
+            modelo: 'Fiesta',
+            ano: '2015'
+        }, 
+        {
+            marca: 'VW',
+            modelo: 'Fusca',
+            ano: '1975'
+        }, 
+    ]   
+}
+
+console.log(concessionaria.carros[1].marca)
+
+for(let carro of concessionaria.carros){
+    console.log(`Marca: ${carro.marca}. Modelo:${carro.modelo}`)
+}
+
+// let pessoa = {
+//     nome: 'Maria', 
+//     idade: 21,
+//     endereco: {
+//         logradouro: 'Rua B',
+//         numero: 14
+//     }
+// }
+// console.log(pessoa.nome, pessoa.idade, pessoa.endereco.logradouro)
+
+
+// let pessoa = {
+//     nome: 'Joao',
+//     idade: 17
+// }
+// //. e [] para acessar membros
+// console.log(pessoa.nome, pessoa.idade)
+// console.log(pessoa['idade'])
+
+
+
+// const app = express()
+
+// app.get('/livors', () => {
+
+// })
+
+// function f(){}  
+
+// () => {}
+
+// a => {return a * 2}
+// a => a * 2 
+
+// function f (a){
+//     return a * 2
+// }
 
 // function eAgora(){
 //     let cont = 1
