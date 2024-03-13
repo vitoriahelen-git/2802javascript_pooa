@@ -1,27 +1,87 @@
-//1 + 2 + 3 + ....... + n - 2 + n - 1 + n
-const soma = (a,b) => {
-    let p = new Promise((resolve, reject) => {
-        //se a e b forem positivos
-        //chamar resolve passando a + b como parametro 
-        //caso contario chamar reject passando texto "nao use negativos" como parametros
-        if(a > 0 && b > 0)
-            resolve(a + b)
-        else
-            reject('Nao use negativo')
+//verificar o valor de n se for negativo, chamar reject passando texto "somente positivos" como parametro para ela 
+//caso contrário, continuar fazendo oq ja faz
+function calculoDemorado(n){
+    let p = new Promise(function(resolve, reject){
+        if(n < 0){
+            reject ('Somente positivos')
+        }
+        else{
+            let res = 0 
+            for(let i = 1; i<=n; i++) res += i
+            resolve(res)
+        }
+        return p
     })
-    return p
 }
 
-
-soma(2,7).then(res => {
-    console.log(`Resultado: ${res}`)
+calculoDemorado(-5)
+.then(res=>{
+    console.log(res)
+    calculoDemorado(6)
+    .then(res =>{
+        console.log(res)
+        calculoDemorado(7)
+        .then(res => console.log(res))
+    })
 })
-.catch(erro => console.log(`Erro: ${erro}`))
+.catch(erro => console.log('Erro: ' + erro))
 
-soma(-2,7)
-.then(res => console.log(`Resultado: ${res}`))
-.catch(erro => console.log(`Erro: ${erro}`))
 
+// function calculoRapidinho(n){
+//     return Promise.resolve((n/2) * (n+1))
+// }
+
+// //calculoRapidinho(n: any): Promise<number>
+// calculoRapidinho(100).then(resultado => console.log(resultado))
+
+
+// function calculoDemorado(n){
+//     let p = new Promise(function(resolve, reject){
+//         let res = 0 
+//         for(let i = 1; i<=n; i++) res += i
+//         resolve(res)
+//     })
+//     return p
+// }
+
+// let minhaPromise = calculoDemorado(100)
+// minhaPromise.then((resultado) => console.log(resultado))
+
+// function calculoDemorado(n){
+//     let res = 0
+//     for(let i = 0; i<=n; i++) res += i
+//     return res
+// }
+
+// const resultado = calculoDemorado(100)
+// console.log(resultado)
+// console.log('outra coisa qualquer')
+
+
+//1 + 2 + 3 + ....... + n - 2 + n - 1 + n
+// const soma = (a,b) => {
+//     let p = new Promise((resolve, reject) => {
+//         //se a e b forem positivos
+//         //chamar resolve passando a + b como parametro 
+//         //caso contario chamar reject passando texto "nao use negativos" como parametros
+//         if(a > 0 && b > 0)
+//             resolve(a + b)
+//         else
+//             reject('Nao use negativo')
+//     })
+//     return p
+// }
+
+
+// soma(2,7).then(res => {
+//     console.log(`Resultado: ${res}`)
+// })
+// .catch(erro => console.log(`Erro: ${erro}`))
+
+// soma(-2,7)
+// .then(res => console.log(`Resultado: ${res}`))
+// .catch(erro => console.log(`Erro: ${erro}`))
+ 
 // const calculoDemorado = (n) => {
 //     let p = new Promise((resolve, reject) => {
 //         let res = 0
